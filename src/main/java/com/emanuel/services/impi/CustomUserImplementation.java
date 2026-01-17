@@ -14,7 +14,7 @@ import java.util.Collection;
 import java.util.Collections;
 
 //Ponte entre Spring Security e o banco de dados, ele busca o usuario e compara a senha
-
+//Diz ao Spring Security como buscar um usuário para login
 
 @Service
 public class CustomUserImplementation implements UserDetailsService {

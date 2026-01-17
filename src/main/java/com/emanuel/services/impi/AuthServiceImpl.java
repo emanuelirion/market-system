@@ -21,6 +21,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.Collection;
+//Contém a regra de negócio de login e cadastro
 
 @Service
 @RequiredArgsConstructor

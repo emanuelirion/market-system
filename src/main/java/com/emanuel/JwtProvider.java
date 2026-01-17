@@ -14,6 +14,7 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+//Cria e lê tokens JWT
 @Service
 public class JwtProvider {
 

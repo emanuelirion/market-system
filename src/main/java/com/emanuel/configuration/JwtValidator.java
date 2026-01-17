@@ -19,6 +19,8 @@ import javax.crypto.SecretKey;
 import java.io.IOException;
 import java.util.List;
 
+//Valida o JWT em toda requisição protegida
+
 public class JwtValidator extends OncePerRequestFilter {
 
     @Override
