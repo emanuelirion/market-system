@@ -1,5 +1,6 @@
 package com.emanuel.services;
 
+import com.emanuel.domain.StoreStatus;
 import com.emanuel.exception.UserException;
 import com.emanuel.modal.Store;
 import com.emanuel.modal.User;
@@ -9,7 +10,7 @@ import java.util.List;
 
 public interface StoreService {
 
-    StoreDTO createStoreDTO(StoreDTO storeDTO, User user);
+    StoreDTO createStore(StoreDTO storeDTO, User user);
     StoreDTO getStoreById(Long id) throws Exception;
     List<StoreDTO> getAllStores();
     Store getStoreByAdmin() throws UserException;
@@ -17,5 +18,5 @@ public interface StoreService {
     void deleteStore(Long id) throws UserException;
     StoreDTO getStoreByEmployee() throws UserException;
 
-
+    StoreDTO moderateStore(Long id, StoreStatus status) throws Exception;
 }

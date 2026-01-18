@@ -1,5 +1,6 @@
 package com.emanuel.services.impi;
 
+import com.emanuel.domain.StoreStatus;
 import com.emanuel.exception.UserException;
 import com.emanuel.mapper.StoreMapper;
 import com.emanuel.modal.Store;
@@ -24,7 +25,7 @@ public class StoreServiceImpi implements StoreService {
 
 
     @Override
-    public StoreDTO createStoreDTO(StoreDTO storeDTO, User user) {
+    public StoreDTO createStore(StoreDTO storeDTO, User user) {
 
         Store store = StoreMapper.toEntity(storeDTO, user );
 
@@ -79,7 +80,7 @@ public class StoreServiceImpi implements StoreService {
     public void deleteStore(Long id) throws UserException {
         Store store = getStoreByAdmin();
 
-        storeRepository.delete(store);
+    storeRepository.delete(store);
     }
 
     @Override
@@ -89,5 +90,18 @@ public class StoreServiceImpi implements StoreService {
             throw new UserException("you don't have permission to access this store");
         }
         return StoreMapper.toDTO(correntUser.getStore());
+    }
+
+    @Override
+    public StoreDTO moderateStore(Long id, StoreStatus status) throws Exception {
+
+        Store store = storeRepository.findById(id).orElseThrow(
+                ()-> new Exception("store not found")
+        );
+        store.setStatus(status);
+        Store updatedStore = storeRepository.save(store);
+
+
+        return StoreMapper.toDTO(updatedStore);
     }
 }
