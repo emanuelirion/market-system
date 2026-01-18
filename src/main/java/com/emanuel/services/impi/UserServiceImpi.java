@@ -11,6 +11,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+
+//busca usuários do sistema, principalmente o usuário que está autenticado, usando o JWT ou o contexto de segurança do Spring
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpi implements UserService {

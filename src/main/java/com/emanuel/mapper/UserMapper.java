@@ -2,7 +2,7 @@ package com.emanuel.mapper;
 
 import com.emanuel.modal.User;
 import com.emanuel.payload.dto.UserDto;
-
+//converte o usuário do banco para um formato seguro e organizado para enviar ao frontend
 public class UserMapper {
 
 
